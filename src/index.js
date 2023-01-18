@@ -9,7 +9,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 app.set('views', join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.get
+app.get('/',(req, res) => res.render('index'));
+
+app.use(express.static(join(__dirname, 'public')));
 
 app.listen(PUERTO);
 console.log(`El servidor esta escuchando en el puerto ${PUERTO}`);
